@@ -24,6 +24,20 @@
     <title>Document</title>
   </head>
   <body>
+    <h1>screen share example </h1>
+    <h4>
+      var constraints = {
+        video: {
+          mediaSource: "webcam",
+          width: screenWidth - 300,
+          height: screenHeight - 300,
+        },
+      };
+      navigator.mediaDevices
+        .getDisplayMedia(constraints)
+        .then((stream) => (video.srcObject = stream))
+        .catch((e) => console.log(e.message));
+    </h4>
     <video id="video" autoplay></video>
   </body>
 </html>
