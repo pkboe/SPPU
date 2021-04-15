@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script>
+      var screenWidth = screen.width;
+      var screenHeight = screen.height;
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      var constraints = {
+        video: {
+          mediaSource: "webcam",
+          width: screenWidth - 300,
+          height: screenHeight - 300,
+        },
+      };
+      navigator.mediaDevices
+        .getDisplayMedia(constraints)
+        .then((stream) => (video.srcObject = stream))
+        .catch((e) => console.log(e.message));
+    </script>
+    <title>Document</title>
+  </head>
+  <body>
+    <video id="video" autoplay></video>
+  </body>
+</html>
